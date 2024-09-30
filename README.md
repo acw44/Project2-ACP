@@ -9,7 +9,7 @@ The File menu has the three items shown. On Open, the program reads a text file 
 ## B. Edit menu
 The Edit menu has one menu item: Spell Check.
 
-###1. General instructions
+### 1. General instructions
 When the program starts, it will open the dictionary file (name it "Words.txt"). Store the words in a Java Set. (https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html). I'm using these words below and it's ok if you use them, too:
 
 hello
@@ -46,7 +46,7 @@ check
 
 Include this file in the root directory of your Eclipse project!
 
-###2. Menus
+### 2. Menus
 #### File --> Open
 Use a File Selector to open a text file, read it and place the contents into a JavaFX TextArea in your application. Include this file in the root directory of  your Eclipse project
 
