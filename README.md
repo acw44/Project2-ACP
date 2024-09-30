@@ -10,8 +10,10 @@ The File menu has the three items shown. On Open, the program reads a text file 
 The Edit menu has one menu item: Spell Check.
 
 ### 1. General instructions
-When the program starts, it will open the dictionary file (name it "Words.txt"). Store the words in a Java Set. (https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html). I'm using these words below and it's ok if you use them, too:
+When the program starts, it will open the dictionary file (name it "Words.txt"). Store the words in a Java Set. [Java Documentation for Set](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html). I'm using these words below and it's ok if you use them, too:
 
+#### Words.txt
+`
 hello
 world
 how
@@ -43,6 +45,7 @@ fabulous
 we
 spell
 check
+`
 
 Include this file in the root directory of your Eclipse project!
 
@@ -51,7 +54,7 @@ Include this file in the root directory of your Eclipse project!
 Use a File Selector to open a text file, read it and place the contents into a JavaFX TextArea in your application. Include this file in the root directory of  your Eclipse project
 
 Here's is an example text full of misspelled words:
-hello worl, how are you. We will spelll check this docuemnt just to see. I hope you are having a good day. The weather this weekend will be flabulous.
+` hello worl, how are you. We will spelll check this docuemnt just to see. I hope you are having a good day. The weather this weekend will be flabulous.`
 
 #### File --> Save
 Saves the current contents of the TextArea into a file chosen over a File Selector.
@@ -62,10 +65,9 @@ Terminates the program. You don't have to issue a warning of the contents of the
 #### Edit --> Spell Check
 Extract every word from the text one by one and find out if the word is in the dictionary. If a word is found that's not contained in the dictionary let the user know and provide a list of suggested words. This list is constructed by making the following modifications to the word and examining the dictionary again:
 
-One letter missing. Assume that one letter has been left out of the word. Assemble new words to check by adding letters a..z in each of the positions in the word from the start to the end of the word.
-One letter added. Assume the word has an extra letter. Scan through the word deleting each of the letters in turn, and looking up the word formed by the remaining letters.
-One letter swapped with an horizontally adjacent letter (my favorite typo, especially on a cellphone). That requires you to store and analyze the current keyboard layout. Here it is for the USA:
-download.png
+1. One letter missing. Assume that one letter has been left out of the word. Assemble new words to check by adding letters a..z in each of the positions in the word from the start to the end of the word.
+2. One letter added. Assume the word has an extra letter. Scan through the word deleting each of the letters in turn, and looking up the word formed by the remaining letters.
+3. One letter swapped with an horizontally adjacent letter (my favorite typo, especially on a cellphone). That requires you to store and analyze the current keyboard layout. 
 No, it's not the same as - say! - a UK keyboard, but that shouldn't matter as long as you are concentrating on just the letters. Please note again that everything here only needs to work for lowercase letters, so you have to take into account the fact that q, a, z, p, l and m only have one neighbor. For example you can expect a misspelling docunent instead of document, but something like docu<ent can be ignored.
 Each time a legal word is found from any of the three methods, it's added to the suggestion list, which is present to the user in a dialog box. 
 
